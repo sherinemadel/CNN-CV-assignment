@@ -17,6 +17,7 @@ width = 32
 height = 32
 depth = 3
 
+
 def unpickle(file, size):
     #loding the dataset
     with open(file, 'rb') as fo:
@@ -155,7 +156,7 @@ def main():
 
             if index % 10 == 0:
                 model_test = build_model(test_images)
-                test_labels = tf.one_hot(test_labels, depth=10)
+                test_labels = tf.one_hot(test_labels, depth=100)
                 train_step1, cross_entropy1, accuracy1 = cost_function(model_test, test_labels)
                 row.append(accuracy1)
 
